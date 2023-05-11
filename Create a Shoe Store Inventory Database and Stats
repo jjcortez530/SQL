@@ -1,0 +1,30 @@
+--Create a shoe store database
+
+CREATE TABLE shoes (id INTEGER PRIMARY KEY, price TEXT, color text, height INTEGER, quantity INTEGER, amount_sold INTEGER);
+
+INSERT INTO shoes VALUES
+(1, "$60", "blue", "4", "16", '3'),
+(2, "$70", "red", "3", "25", "15"),
+(3, "$25", 'green', '1', '2', '6'),
+(4, '$100', 'black', '5', '30', '25'),
+(5, '$600', 'mermaid', '6', '5', '3'),
+(6, '$30', 'beige', '3', '55', '35'),
+(7, '$45', 'yellow', '4', '16', '3'),
+(8, '$25', 'brown', '4', '20', '12'),
+(9, '$45', 'teal', '3', '45', '0'),
+(10, '$75', 'cowprint', '3','15', '2'),
+(11, '$150', 'pink', '4', '36', '20'),
+(12, '$80', 'grey', '5', '15', '3'),
+(13, '$55', 'purple', '4', '10', '10'),
+(14, '$250', 'studded', '5', '3', '3'),
+(15, '$25', 'metallic', '4', '10', '5')
+;
+
+--display the data in table format.
+SELECT * FROM shoes;
+
+--display the database amount sold by price.
+SELECT * FROM shoes WHERE amount_sold > 0 ORDER BY price desc;
+
+--what is the quantity sold of the "mermaid" shoes?
+SELECT AVG(amount_sold) "mermaid" FROM shoes where color='mermaid';
